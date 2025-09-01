@@ -1,0 +1,28 @@
+<nav class="bg-gray-800 text-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+       <div class="hidden md:flex space-x-6 text-3xl">
+        <a 
+          routerLink="/dashboard" 
+          routerLinkActive="font-bold text-gray-200"
+          class="hover:text-gray-300 transition-colors duration-200"
+          style="text-decoration: none;"
+        >
+          Dashboard
+        </a>
+        <a 
+          routerLink="/users" 
+          routerLinkActive="font-bold text-gray-200"
+          class="hover:text-gray-300 transition-colors duration-200"
+          style="text-decoration: none;"
+        >
+          Users
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="p-6">
+  <router-outlet></router-outlet>
+</div>

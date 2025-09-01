@@ -1,0 +1,46 @@
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+  <div class="bg-blue-100 p-4 rounded-xl text-center">
+    <p class="text-6xl text-gray-600">Total Users</p>
+    <h2 class="text-8xl font-bold">{{ totalUsers }}</h2>
+  </div>
+
+  <div class="bg-white p-4 rounded-xl shadow">
+    <h3 class="text-6xl font-semibold mb-2">Avatar Distribution</h3>
+    <canvas baseChart
+      [data]="avatarChartData"
+      [options]="avatarChartOptions"
+      chartType="pie">
+    </canvas>
+  </div>
+
+  <div class="bg-white p-4 rounded-xl shadow">
+    <h3 class="text-6xl font-semibold mb-2">Signup Time Distribution</h3>
+    <canvas baseChart
+      [data]="signupChartData"
+      [options]="signupChartOptions"
+      chartType="pie">
+    </canvas>
+  </div>
+
+  <div class="bg-white p-4 rounded-xl shadow col-span-1 md:col-span-2">
+    <h3 class="text-6xl font-semibold mb-2">Users Created Per Day</h3>
+    <canvas baseChart
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      chartType="line">
+    </canvas>
+  </div>
+
+  <div class="bg-white p-4 rounded-xl shadow col-span-1 md:col-span-2">
+    <h3 class="text-6xl font-semibold mb-2">Recently Joined</h3>
+    <ul class="flex overflow-x-auto gap-4">
+      <li *ngFor="let u of recentUsers" class="flex flex-col items-center p-2 bg-gray-100 rounded shadow">
+        <img [src]="u.avatar || 'assets/user-placeholder.png'" class="w-16 h-16 rounded-full mb-1" alt="{{u.name}}">
+        <span class="text-sm font-medium">{{ u.name }}</span>
+        <span class="text-xs text-gray-500">{{ u.createdAt | date:'shortDate' }}</span>
+      </li>
+    </ul>
+  </div>
+
+</div>
