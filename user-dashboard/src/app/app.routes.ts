@@ -5,7 +5,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { HttpClient } from '@angular/common/http';
 
 export const routes: Routes = [
-  { path: '/', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'users', component: UsersComponent }
 ];
